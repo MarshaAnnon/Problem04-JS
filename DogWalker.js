@@ -4,18 +4,17 @@ class DogWalker {
         let dogMap = {};
              
         dogSizes.forEach((item)  => {
-            if(dogMap[item] === undefined) {
-                dogMap[item] = 1
-            }else {
-                dogMap[item] = dogMap[item] + 1
-            }
+            dogMap[item] = (dogMap[item]) ? dogMap[item] + 1 : 1;
         });
 
         for(let dogs in dogMap) {
-            totalHours += Math.ceil(dogMap[dogs]/2)
+            totalHours += Math.ceil(dogMap[dogs] / 2)
         }
         return totalHours
     }
 }
 
 module.exports = DogWalker;
+
+
+
